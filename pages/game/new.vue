@@ -2,6 +2,14 @@
 // import { useGameStore } from '~/composables/useGameStore'
 import { useAppwrite } from '~/composables/useAppwrite'
 
+useHead({
+    title: 'Create a Rock Paper Scissors Game Online',
+    meta: [
+        { name: 'description', content: "Create a Rock Paper Scissors Game online. Share the link, and settle debates in a fun way. Join now to make decisions together!" },
+        { name: 'keywords', content: 'rock paper scissors, game, play online' },
+    ],
+})
+
 // const gameStore = useGameStore()
 const appwrite = useAppwrite()
 const { playerId, createPlayerId } = usePlayer()

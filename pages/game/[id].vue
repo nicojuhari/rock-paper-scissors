@@ -5,6 +5,14 @@ import { useRoute } from 'vue-router'
 //  from '@/composables/useAppwrite'
 // import { useGameLogic } from '@/composables/useGameLogic'
 
+useHead({
+    title: 'Play Now - Rock Paper Scissors Game Online',
+    meta: [
+        { name: 'description', content: "Play Now Rock Paper Scissors Game online." },
+        { name: 'keywords', content: 'rock paper scissors, game, play online' },
+    ],
+})
+
 const route = useRoute()
 // const gameStore = useGameStore()
 const { gameData, getGame, subscribeToGame, joinGame, deleteGame } = useAppwrite()

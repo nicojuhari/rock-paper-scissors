@@ -1,5 +1,11 @@
 <script setup lang="ts">
-
+  useHead({
+    title: 'Rock Paper Scissors Online | Challenge Friends and Family',
+    meta: [
+      { name: 'description', content: "Play Rock Paper Scissors online with friends and family! Create a game, share the link, and settle debates in a fun way. Join now to make decisions together!" },
+      { name: 'keywords', content: 'rock paper scissors, game, play online' },
+    ],
+  })
 </script>
 
 <template>
