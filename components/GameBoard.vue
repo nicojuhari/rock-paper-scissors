@@ -2,7 +2,7 @@
 
 
 
-    const { gameData, updateGameChoices } = useAppwrite()
+    const { gameData, updateGameChoices, unsubscribeFromGame } = useAppwrite()
     const route = useRoute()
     const gameId = route.params.id as string
     const playerId = usePlayer().playerId
@@ -64,6 +64,10 @@
         else return gameData.value?.player1Choices
     })
 
+    watch(isGameFinished, () => {
+        unsubscribeFromGame()
+    })
+
 </script>
 <template>
     <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
@@ -93,7 +97,9 @@
             <div class="mb-4">Results:</div>
             <div v-if="getTheWinner === playerId" class="text-green-600 text-2xl">Congrats! You won</div>
             <div v-else class="text-red-600 text-2xl">You lost, try again</div>
-
+            <div class="my-4">
+                <UButton to="/game/new">Create another game!</UButton>
+            </div>
         </div>
 
 

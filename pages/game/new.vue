@@ -34,9 +34,6 @@ const createGame = async () => {
             <template #header>
                 <h2 class="text-2xl font-bold">Create New Game</h2>
             </template>
-                <UFormGroup label="Your Name" name="name">
-                    <UInput v-model="name" placeholder="Enter your name" required />
-                </UFormGroup>
                 <UFormGroup label="Game Reason" name="reason">
                     <UInput v-model="reason" placeholder="Enter game reason" required />
                 </UFormGroup>

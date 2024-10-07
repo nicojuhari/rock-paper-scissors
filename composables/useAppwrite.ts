@@ -1,5 +1,6 @@
 import { Client, Databases, ID } from 'appwrite'
 import { ref } from 'vue';
+
 const APPWRITE_ENDPOINT = 'https://cloud.appwrite.io/v1'
 const APPWRITE_PROJECT_ID = '67039957003124ccde85'
 const APPWRITE_DATABASE_ID = '67039f28000dc292251a'
@@ -50,9 +51,9 @@ export const useAppwrite = () => {
     }
   }
 
-  const joinGame = async (gameId: string, player2: string): Promise<void> => {
+  const joinGame = async (gameId: string, player2: string): Promise<Game> => {
     try {
-      await databases.updateDocument(
+      let response = await databases.updateDocument<Game>(
         APPWRITE_DATABASE_ID,
         APPWRITE_COLLECTION_ID,
         gameId,
@@ -60,6 +61,8 @@ export const useAppwrite = () => {
           player2,
         }
       )
+     return response
+
     } catch (error) {
       console.error('Error joining game:', error)
       throw error
@@ -78,19 +81,24 @@ export const useAppwrite = () => {
 
     } catch (error) {
       console.error('Error fetching game:', error)
-      throw error
+      // throw error
     }
   }
 
   const subscribeToGame = (gameId: string): void => {
-    console.log('subscribeToGame', gameId)
+    
     const channel = `databases.${APPWRITE_DATABASE_ID}.collections.${APPWRITE_COLLECTION_ID}.documents.${gameId}`
-
-    unsubscribe = client.subscribe(channel, (response) => {
-      if(response.events?.[0].includes('update'))
-        if(response && response.payload)
-          gameData.value = response.payload as Game
-    })
+    if(!unsubscribe) {
+      unsubscribe = client.subscribe(channel, (response) => {
+        if(response.events?.[0].includes('update'))
+          if(response && response.payload)
+            gameData.value = response.payload as Game
+        if(response.events?.[0].includes('delete')) {
+          unsubscribeFromGame()
+          useRouter().push('/')
+        }
+      })
+    }
   }
 
   const unsubscribeFromGame = () => {
@@ -121,7 +129,7 @@ export const useAppwrite = () => {
         )
     } catch (error) {
       console.error('Error updating game choices:', error)
-      throw error
+      // throw error
     }
   }
 
@@ -134,7 +142,7 @@ export const useAppwrite = () => {
       )
     } catch (error) {
       console.error('Error deleting game:', error)
-      throw error
+      // throw error
     }
   }
 
@@ -144,6 +152,7 @@ export const useAppwrite = () => {
     joinGame,
     getGame,
     subscribeToGame,
+    unsubscribeFromGame,
     updateGameChoices,
     deleteGame,
   }
