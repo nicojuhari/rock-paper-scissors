@@ -28,19 +28,16 @@ const createGame = async () => {
 </script>
 
 <template>
-    <UContainer class="py-8">
-        <UForm :state="{ name, reason }" @submit="createGame">
-        <UCard>
-            <template #header>
-                <h2 class="text-2xl font-bold">Create New Game</h2>
-            </template>
-                <UFormGroup label="Game Reason" name="reason">
-                    <UInput v-model="reason" placeholder="Enter game reason" required />
-                </UFormGroup>
-                <template #footer>
-                    <UButton type="submit" color="primary">Create Game</UButton>
-                </template>
-            </UCard>
-        </UForm>
-    </UContainer>
+    <div class="container">
+        <h1 class="mt-24 text-3xl font-bold text-center">Create Your Game Room</h1>
+        <div class="my-10 flex flex-col gap-1.5">
+            <label class="text-2xl">What's at Stake?<span class="text-sm text-gray-500"> (optional):</span></label>
+            <input v-model="reason" class="border rounded border-gray-500 p-2 text-3xl" maxlength="200" />
+            <div class="text-gray-500">Enter the reason for your game (e.g., "Who washes the car?" or "What movie to watch tonight?")</div>
+        </div>
+        <div class="text-center my-10">
+            <button @click.prevent="createGame"
+                class="btn bg-orange-500 text-white">Create</button>
+        </div>
+    </div>
 </template>

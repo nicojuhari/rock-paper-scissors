@@ -70,16 +70,18 @@
 
 </script>
 <template>
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h2 class="text-2xl font-bold mb-4 text-center">Game Board</h2>
+    <div class="flex flex-col items-center justify-center my-14">
+        <h2 class="text-2xl font-bold mb-4 text-center">Play Now</h2>
+        <div>select 3 times</div>
         <div class="flex justify-center items-center gap-4 my-4">
-            <div @click="select(+key)" class="shrink-0 w-14 h-14 text-2xl inline-flex items-center justify-center cursor-pointer p-2 border border-gray-300 rounded-md"
+            <div @click="select(+key)"
+                class="shrink-0 w-14 h-14 text-2xl inline-flex items-center justify-center cursor-pointer p-2 border border-gray-300 rounded-md"
                 v-for="(item, key ) in controlers" :key="key"> {{ item }}</div>
         </div>
         <div class="mt-6">You Selected:</div>
         <div class="grid grid-cols-3 gap-2">
             <div v-for="item in yourChoices">
-                <UIcon name="i-ph-check-circle" v-if="!isGameFinished" class="w-6 h-6 text-green-600" />
+                <UiIconCheck v-if="!isGameFinished" class="w-6 h-6 text-green-600" />
                 <div v-else>{{ controlers[item as keyof typeof controlers] }}</div>
                 <!-- <div>
                     {{ compareChoices(item, ) }}
@@ -89,7 +91,7 @@
         <div class="mt-6">2nd player selected:</div>
         <div class="grid grid-cols-3 gap-2">
             <div v-for="item in secondPlayerChoices">
-                <UIcon name="i-ph-check-circle" v-if="!isGameFinished" class="w-6 h-6 text-green-600" />
+                <UiIconCheck v-if="!isGameFinished" class="w-6 h-6 text-green-600" />
                 <div v-else>{{ controlers[item as keyof typeof controlers] }}</div>
             </div>
         </div>
@@ -98,7 +100,7 @@
             <div v-if="getTheWinner === playerId" class="text-green-600 text-2xl">Congrats! You won</div>
             <div v-else class="text-red-600 text-2xl">You lost, try again</div>
             <div class="my-4">
-                <UButton to="/game/new">Create another game!</UButton>
+                <nuxt-link to="/game/new" class="btn bg-orange-500 text-white">Create another game!</nuxt-link>
             </div>
         </div>
 
