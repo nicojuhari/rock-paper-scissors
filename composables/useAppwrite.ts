@@ -87,6 +87,23 @@ export const useAppwrite = () => {
     }
   }
 
+  const resetGame = async (gameId: string): Promise<void> => {
+     try {
+        await databases.updateDocument(
+          APPWRITE_DATABASE_ID,
+          APPWRITE_COLLECTION_ID,
+          gameId,
+          {
+            player1Choices: [],
+            player2Choices: [],
+          }
+        )
+    } catch (error) {
+      console.error('Error updating game choices:', error)
+      // throw error
+    }
+  }
+
   const subscribeToGame = (gameId: string): void => {
     
     const channel = `databases.${APPWRITE_DATABASE_ID}.collections.${APPWRITE_COLLECTION_ID}.documents.${gameId}`
@@ -156,6 +173,7 @@ export const useAppwrite = () => {
     subscribeToGame,
     unsubscribeFromGame,
     updateGameChoices,
+    resetGame,
     deleteGame,
   }
 }

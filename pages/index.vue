@@ -27,9 +27,9 @@ const onCreateGame = async () => {
   <div class="container">
     <div class="mt-24 md:mt-32 space-y-1 text-center font-bold">
       <div class="text-2xl">Play</div>
-      <h1 class=" text-4xl md:text-6xl">
-        <span class="text-blue-500">Rock</span>
-        <span class="text-yellow-500">Paper</span>
+      <h1 class="text-4xl md:text-6xl">
+        <span class="text-blue-500">Rock </span>
+        <span class="text-yellow-500">Paper </span>
         <span class="text-red-500">Scissors</span>
       </h1>
       <div class="text-2xl pt-1.5">Online</div>
