@@ -6,18 +6,43 @@
       { name: 'keywords', content: 'rock paper scissors, game, play online' },
     ],
   })
+
+  const { playerName, playerId } = usePlayer()
+  const { createGame } = useAppwrite();
+
+const onCreateGame = async () => {
+  try {
+    const gameId = await createGame(playerId.value, playerName.value)
+    navigateTo(`/game/${gameId}`)
+  } catch (error) {
+    console.error(error)
+    alert('Failed to create game')
+  }
+}
+
+
 </script>
 
 <template>
   <div class="container">
-    <div class="font-bold text-center mt-24 md:mt-32 text-4xl md:text-6xl">
-      <div class="text-3xl">Play</div>
-      <h1>Rock Paper Scissors <br>Game Online</h1>
+    <div class="mt-24 md:mt-32 space-y-1 text-center font-bold">
+      <div class="text-2xl">Play</div>
+      <h1 class=" text-4xl md:text-6xl">
+        <span class="text-blue-500">Rock</span>
+        <span class="text-yellow-500">Paper</span>
+        <span class="text-red-500">Scissors</span>
+      </h1>
+      <div class="text-2xl pt-1.5">Online</div>
     </div>
-    <div class="my-6 text-center text-lg">No login or sign-up required!<br>Simply set up your game room and invite friends and
+    <div class="mt-10 text-center text-lg">No login or sign-up required! Simply set up your game room and invite
+      friends and
       family to join in on the fun.</div>
     <div class="text-center my-6">
-      <NuxtLink to="/game/new" class="btn bg-orange-500 text-white">Create a Game</NuxtLink>
+      <div v-if="playerName" class="text-center space-y-4">
+        <div class="text-green-600">Welcome back <strong>{{ playerName }}</strong></div>
+        <button class="btn btn-outline" @click.prevent="onCreateGame">Create another Game</button>
+      </div>
+      <NuxtLink v-else to="/game/new" class="btn btn-outline">Create a Game</NuxtLink>
     </div>
   </div>
 </template>

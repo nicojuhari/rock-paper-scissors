@@ -36,29 +36,11 @@ onMounted(async () => {
 })
 
 
-const onJoinGame = async () => {
-    try {
 
-        if (!playerId.value) {
-            createPlayerId()
-        }
-        gameData.value = await joinGame(gameId, playerId.value)
-    
-    } catch (err) {
-        console.error(err)
-    }
-}
 
-const copyToClipboard = () => {
-    //get the full url and copy to clipboard
-    const fullUrl = window.location.href
-
-    navigator.clipboard.writeText(fullUrl)
-}
-
-const onDeleteGame = async () => {
-    if (gameData?.value?.$id) await deleteGame(gameData.value.$id)
-}
+// const onDeleteGame = async () => {
+//     if (gameData?.value?.$id) await deleteGame(gameData.value.$id)
+// }
 
 // ... implement game logic, selection, and result display
 </script>
@@ -66,13 +48,10 @@ const onDeleteGame = async () => {
 <template>
     <div class="container mx-auto px-4 py-8">
         <template v-if="gameData">
-            <h2 class="text-2xl font-bold mb-4 text-center">Game Room</h2>
-
+            <h1 class="text-2xl font-bold mb-4 text-center">Game Room</h1>
+            <!-- if you created the game and ther is no 2nd player yet -->
             <template v-if="playerId !== gameData?.player1 && !gameData.player2">
-                <div class="mb-6" v-if="gameData?.reason">
-                    In this game will be decided: <strong>{{ gameData.reason }}</strong>
-                </div>
-                <button @click="onJoinGame" class="btn bg-blue-600 text-white">Join this Game</button>
+                <JoinGame/>
             </template>
             <template v-else-if="!gameData.player2">
                 <div class="my-24 space-y-8 text-center">
@@ -80,11 +59,10 @@ const onDeleteGame = async () => {
                     <p class="text-4xl">Waiting for the second player...</p>
                 </div>
 
-                <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div class="pt-6 space-y-6 text-center border-t">
                     <div>Share the game room URL with your friends or family</div>
                     <div>
-                        <button @click.prevent="copyToClipboard" class="btn border text-blue-600 border-blue-600">Copy to
-                            Clipboard</button>
+                        <IncludesCopyToClipboard class="btn-primary" />
                     </div>
                 </div>
             </template>
@@ -105,10 +83,6 @@ const onDeleteGame = async () => {
                 <nuxt-link to="/game/new" class="btn bg-orange-500 text-white">Create a new
                     game</nuxt-link>
             </div>
-        </div>
-        <div v-if="gameData && gameData.player1 == playerId" class="my-10">
-            <button @click.prevent="onDeleteGame" class="btn border border-red-600 text-red-600">Delete the
-                game</button>
         </div>
 
         <!-- Implement game UI here -->

@@ -9,9 +9,10 @@ const APPWRITE_COLLECTION_ID = '67039f370009d02987f1'
 type Game = {
   player1: string,
   player2: string,
-  reason: string,
   player1Choices: number[],
   player2Choices: number[],
+  player1Name: string,
+  player2Name: string,
   $id: string,
   $collectionId: string,
   $databaseId: string,
@@ -32,7 +33,7 @@ export const useAppwrite = () => {
 
   let unsubscribe: (() => void) | null = null
 
-  const createGame = async (player1: string, reason: string): Promise<string> => {
+  const createGame = async (player1: string, player1Name: string): Promise<string> => {
     try {
       const response = await databases.createDocument(
         APPWRITE_DATABASE_ID,
@@ -40,7 +41,7 @@ export const useAppwrite = () => {
         ID.unique(),
         {
           player1,
-          reason,
+          player1Name,
         }
       )
 
@@ -51,7 +52,7 @@ export const useAppwrite = () => {
     }
   }
 
-  const joinGame = async (gameId: string, player2: string): Promise<Game> => {
+  const joinGame = async (gameId: string, player2: string, player2Name: string): Promise<Game> => {
     try {
       let response = await databases.updateDocument<Game>(
         APPWRITE_DATABASE_ID,
@@ -59,6 +60,7 @@ export const useAppwrite = () => {
         gameId,
         {
           player2,
+          player2Name
         }
       )
      return response
