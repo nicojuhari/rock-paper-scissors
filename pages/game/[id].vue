@@ -48,27 +48,27 @@ onMounted(async () => {
 <template>
     <div class="container mx-auto px-4 py-8">
         <template v-if="gameData">
-            <h1 class="text-2xl font-bold mb-4 text-center">Game Room</h1>
-            <!-- if you created the game and ther is no 2nd player yet -->
-            <template v-if="playerId !== gameData?.player1 && !gameData.player2">
-                <JoinGame/>
-            </template>
-            <template v-else-if="!gameData.player2">
-                <div class="my-24 space-y-8 text-center">
-                    <UiLoading class="h-10 w-10 text-gray-300 text-center mx-auto" />
-                    <p class="text-4xl">Waiting for the second player...</p>
-                </div>
-
-                <div class="pt-6 space-y-6 text-center border-t">
-                    <div>Share the game room URL with your friends or family</div>
-                    <div>
-                        <IncludesCopyToClipboard class="btn-primary" />
+            <template v-if="!gameData.player2">
+                <h1 class="text-2xl font-bold mb-4 text-center">Game Room</h1>
+                <template v-if="playerId !== gameData?.player1">
+                    <JoinGame />
+                </template>
+                <template v-else>
+                    <div class="my-24 space-y-8 text-center">
+                        <UiLoading class="h-10 w-10 text-gray-300 text-center mx-auto" />
+                        <p class="text-4xl">Waiting for the second player...</p>
                     </div>
-                </div>
+
+                    <div class="pt-6 space-y-6 text-center border-t">
+                        <div>Share the game room URL with your friends or family</div>
+                        <div>
+                            <IncludesCopyToClipboard class="btn-outline" />
+                        </div>
+                    </div>
+                </template>
             </template>
-            <template v-else>
-                <GameBoard />
-            </template>
+            <!-- if you created the game and ther is no 2nd player yet -->
+            <GameBoard v-else />
         </template>
         <div v-else-if="loading" class="container my-24 flex items-center justify-center">
             <UiLoading class="h-24 w-24 text-gray-300" />
@@ -80,7 +80,7 @@ onMounted(async () => {
                 easily create a
                 new game and start fresh.</p>
             <div class="text-center">
-                <nuxt-link to="/game/new" class="btn bg-orange-500 text-white">Create a new
+                <nuxt-link to="/game/new" class="btn btn-primary">Create a new
                     game</nuxt-link>
             </div>
         </div>

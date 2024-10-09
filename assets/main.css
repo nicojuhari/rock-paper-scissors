@@ -18,9 +18,13 @@ body {
 }
 
 .btn.btn-primary {
-    @apply bg-blue-600 text-white;
+    @apply bg-gray-950 text-white;
 }
 
 .btn.btn-outline {
     @apply border-2 border-gray-900 text-gray-950;
+}
+
+.player-selected-table td, .player-selected-table th {
+    @apply border p-2 py-4 text-center text-sm
 }
