@@ -7,12 +7,12 @@
     ],
   })
 
-  const { playerName, playerId } = usePlayer()
+  const { playerId } = usePlayer()
   const { createGame } = useAppwrite();
 
 const onCreateGame = async () => {
   try {
-    const gameId = await createGame(playerId.value, playerName.value)
+    const gameId = await createGame(playerId.value)
     navigateTo(`/game/${gameId}`)
   } catch (error) {
     console.error(error)
@@ -38,11 +38,8 @@ const onCreateGame = async () => {
       friends and
       family to join in on the fun.</div>
     <div class="text-center my-6">
-      <div v-if="playerName" class="text-center space-y-4">
-        <div class="text-green-600">Welcome back <strong>{{ playerName }}</strong></div>
-        <button class="btn btn-outline" @click.prevent="onCreateGame">Create another Game</button>
-      </div>
-      <NuxtLink v-else to="/game/new" class="btn btn-outline">Create a Game</NuxtLink>
+      <button class="btn btn-primary" @click.prevent="onCreateGame">Create a Game</button>
     </div>
+    <HomeContent />
   </div>
 </template>

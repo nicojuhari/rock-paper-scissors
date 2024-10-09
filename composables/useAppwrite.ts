@@ -1,25 +1,10 @@
 import { Client, Databases, ID } from 'appwrite'
 import { ref } from 'vue';
-
+import type { Game } from '../types'
 const APPWRITE_ENDPOINT = 'https://cloud.appwrite.io/v1'
 const APPWRITE_PROJECT_ID = '67039957003124ccde85'
 const APPWRITE_DATABASE_ID = '67039f28000dc292251a'
 const APPWRITE_COLLECTION_ID = '67039f370009d02987f1'
-
-type Game = {
-  player1: string,
-  player2: string,
-  player1Choices: number[],
-  player2Choices: number[],
-  player1Name: string,
-  player2Name: string,
-  $id: string,
-  $collectionId: string,
-  $databaseId: string,
-  $createdAt: string,
-  $updatedAt: string,
-  $permissions: []
-}
 
 const gameData = ref<Game | null >(null)
 
@@ -33,7 +18,7 @@ export const useAppwrite = () => {
 
   let unsubscribe: (() => void) | null = null
 
-  const createGame = async (player1: string, player1Name: string): Promise<string> => {
+  const createGame = async (player1: string): Promise<string> => {
     try {
       const response = await databases.createDocument(
         APPWRITE_DATABASE_ID,
@@ -41,7 +26,6 @@ export const useAppwrite = () => {
         ID.unique(),
         {
           player1,
-          player1Name,
         }
       )
 
@@ -52,7 +36,7 @@ export const useAppwrite = () => {
     }
   }
 
-  const joinGame = async (gameId: string, player2: string, player2Name: string): Promise<Game> => {
+  const joinGame = async (gameId: string, player2: string): Promise<Game> => {
     try {
       let response = await databases.updateDocument<Game>(
         APPWRITE_DATABASE_ID,
@@ -60,7 +44,6 @@ export const useAppwrite = () => {
         gameId,
         {
           player2,
-          player2Name
         }
       )
      return response

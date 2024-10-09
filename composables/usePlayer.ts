@@ -1,4 +1,3 @@
-const playerName = ref('')
 const playerId = ref('')
 
 export const usePlayer = () => {
@@ -11,16 +10,11 @@ export const usePlayer = () => {
         playerId.value = newUserId
     }
 
-    const createPlayerName = (name: string) => {
-        localStorage.setItem('rps-player-name', name)
-    }
-
     //check if we are in browser
 
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
         //create unique id for the user, if not exist
         playerId.value = localStorage.getItem('rps-player-id') || ''
-        playerName.value = localStorage.getItem('rps-player-name') || ''
 
         if (!playerId.value) {
         //without crypto, just use a random number and date
@@ -31,8 +25,6 @@ export const usePlayer = () => {
 
     return {
         playerId,
-        playerName,
         createPlayerId,
-        createPlayerName
     }
 }

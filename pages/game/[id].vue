@@ -15,13 +15,12 @@ useHead({
 
 const route = useRoute()
 // const gameStore = useGameStore()
-const { gameData, getGame, subscribeToGame, joinGame, deleteGame } = useAppwrite()
-const { playerId, createPlayerId } = usePlayer()
+const { gameData, getGame, subscribeToGame } = useAppwrite()
+const { playerId } = usePlayer()
 
 // const gameLogic = useGameLogic()
 
 const gameId = route.params.id as string
-const playerName = ref('')
 const loading = ref(true)
 
 onMounted(async () => {

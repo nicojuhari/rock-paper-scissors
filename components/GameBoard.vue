@@ -2,7 +2,7 @@
 
 
 
-    const { gameData, updateGameChoices, unsubscribeFromGame, resetGame } = useAppwrite()
+    const { gameData, updateGameChoices, resetGame } = useAppwrite()
     const { isGameFinished, gameWinner } = useGame()
     const route = useRoute()
     const gameId = route.params.id as string
@@ -24,7 +24,6 @@
 </script>
 <template>
     <div class="max-w-sm mx-auto">
-        <GameScore></GameScore>
         <div class="h-14 mt-8">
             <template v-if="!isGameFinished">
                 <h1 class="text-xl font-bold text-center text-green-600">Play Now</h1>
@@ -42,10 +41,11 @@
         <div v-if="isGameFinished" class="mt-8">
             <div class="text-center text-2xl font-bold">
                 <div v-if="gameWinner === playerId" class="text-green-600 text-2xl">Congrats!<br>You won</div>
-                <div v-else class="text-red-600 text-2xl">You lost</div>
+                <div v-else-if="gameWinner === 0">It is a Draw</div>
+                <div v-else class="text-red-600 text-2xl">Sorry, you lost</div>
             </div>
             <div class="my-8 text-center">
-                <button @click.prevent="() => resetGame(gameId)" class="btn btn-outline">Play again!</button>
+                <button @click.prevent="() => resetGame(gameId)" class="btn btn-outline">Play again</button>
             </div>
         </div>
     </div>
