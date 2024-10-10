@@ -10,6 +10,7 @@
     const gamesPlayed = ref(0)
 
     const winnerRef = ref<HTMLDivElement>()
+    let audio: HTMLAudioElement
 
     watch(gameWinner, (newVal, oldVal) => {
         if(newVal === null) return
@@ -18,6 +19,7 @@
         if(newVal === playerId.value) {
             //winner
             youWon.value += 1;
+            playVictorySound()
             showConfetti()
         }
         else secondPlayerWon.value += 1;
@@ -47,6 +49,17 @@
         }
     }
 
+    const setupAudio = async () => {
+        audio = new Audio('/cheer.mp3')
+    }
+
+    const playVictorySound = () => {
+        if (audio) {
+            audio.currentTime = 0 // Reset the audio to the beginning
+            audio.play()
+        }
+    }
+
     onMounted(() => {    
         //prepare for confetti
         let confetti = new Confetti('winner-confetti')
@@ -56,6 +69,8 @@
         confetti.setSize(1);
         confetti.setPower(25);
         confetti.destroyTarget(false);
+
+        setupAudio()
     })
    
 
@@ -140,7 +155,7 @@
             <div>Current Score: <span :class="whoIsLeader" class="font-bold">{{ youWon}} - {{ secondPlayerWon }}</span>
             </div>
         </div>
-        <div ref="winnerRef" id="winner-confetti"></div>
+        <div ref="winnerRef" id="winner-confetti" class="h-0 w-0 invisible"></div>
     </div>
 </template>
 

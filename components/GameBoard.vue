@@ -33,8 +33,8 @@
             </div>
         </div>
         <div class="grid grid-cols-3 items-center gap-6 w-full mt-10" :class="{'opacity-50': isGameFinished}">
-            <div @click="select(+key)" :class="{'hover:bg-gray-200 hover:translate-y-1' : !isGameFinished}"
-                class="aspect-square text-5xl inline-flex items-center justify-center cursor-pointer p-2 bg-white shadow-md rounded-md transition-all duration-300"
+            <div @click="select(+key)" :class="{'hover:shadow-md hover:translate-y-1' : !isGameFinished}"
+                class="aspect-square text-5xl inline-flex items-center select-none justify-center cursor-pointer p-2 bg-white shadow-xl rounded-md transition-all duration-300"
                 v-for="(item, key ) in controlers" :key="key"> {{ item }}
             </div>
         </div>
