@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+    import { Confetti } from '../confetti'
+    
     const { isGameFinished, compareChoices, gameWinner } = useGame()
     const { gameData } = useAppwrite()
     const { playerId } = usePlayer()
@@ -8,11 +9,17 @@
     const secondPlayerWon = ref(0)
     const gamesPlayed = ref(0)
 
+    const winnerRef = ref<HTMLDivElement>()
+
     watch(gameWinner, (newVal, oldVal) => {
         if(newVal === null) return
         gamesPlayed.value += 1
         if(newVal === 0) return // it's a draw
-        if(newVal === playerId.value) youWon.value += 1;
+        if(newVal === playerId.value) {
+            //winner
+            youWon.value += 1;
+            showConfetti()
+        }
         else secondPlayerWon.value += 1;
     })
 
@@ -22,6 +29,33 @@
         if (youWon.value < secondPlayerWon.value) tempClass = 'text-red-600'
         
         return tempClass
+    })
+
+    const showConfetti = () => {
+
+        if(winnerRef.value) {
+            const rect = winnerRef.value.getBoundingClientRect()
+            const x = window.innerWidth / 2  // Horizontal center of the screen
+            const y = rect.top + rect.height / 2  //
+
+            const event = new MouseEvent('click', {
+                'clientX': x,
+                'clientY': y
+            });
+
+            winnerRef.value.dispatchEvent(event);
+        }
+    }
+
+    onMounted(() => {    
+        //prepare for confetti
+        let confetti = new Confetti('winner-confetti')
+
+        // Edit given parameters
+        confetti.setCount(120);
+        confetti.setSize(1);
+        confetti.setPower(25);
+        confetti.destroyTarget(false);
     })
    
 
@@ -106,6 +140,7 @@
             <div>Current Score: <span :class="whoIsLeader" class="font-bold">{{ youWon}} - {{ secondPlayerWon }}</span>
             </div>
         </div>
+        <div ref="winnerRef" id="winner-confetti"></div>
     </div>
 </template>
 
