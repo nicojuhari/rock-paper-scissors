@@ -25,19 +25,17 @@ const onCreateGame = async () => {
 
 <template>
   <div class="container">
-    <div class="mt-24 md:mt-32 space-y-1 text-center font-bold">
-      <div class="text-2xl">Play</div>
-      <h1 class="text-4xl md:text-6xl">
+    <div class="mt-24 md:mt-32 space-y-2.5 text-center font-bold text-4xl md:text-5xl">
+      <div>Play</div>
+      <h1>
         <span class="text-blue-500">Rock </span>
         <span class="text-yellow-500">Paper </span>
         <span class="text-red-500">Scissors</span>
       </h1>
-      <div class="text-2xl pt-1.5">Online</div>
+      <div>Online</div>
     </div>
-    <div class="mt-10 text-center text-lg">No login or sign-up required! Simply set up your game room and invite
-      friends and
-      family to join in on the fun.</div>
-    <div class="text-center my-6">
+    <div class="mt-10 text-center text-lg">No login or sign-up required!<br> Create - Share - Play</div>
+    <div class="text-center my-10">
       <button class="btn btn-primary" @click.prevent="onCreateGame">Create a Game</button>
     </div>
     <HomeContent />

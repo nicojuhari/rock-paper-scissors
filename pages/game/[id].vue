@@ -48,20 +48,20 @@ onMounted(async () => {
     <div class="container mx-auto px-4 py-8">
         <template v-if="gameData">
             <template v-if="!gameData.player2">
-                <h1 class="text-2xl font-bold mb-4 text-center">Game Room</h1>
                 <template v-if="playerId !== gameData?.player1">
+                    <h1 class="text-2xl font-bold mb-4 text-center">Join the Game Room</h1>
                     <JoinGame />
                 </template>
                 <template v-else>
-                    <div class="my-24 space-y-8 text-center">
+                    <h1 class="text-2xl font-bold mb-4 text-center">Game Room Status</h1>
+                    <div class="my-10 space-y-8 text-center">
                         <UiLoading class="h-10 w-10 text-gray-300 text-center mx-auto" />
-                        <p class="text-4xl">Waiting for the second player...</p>
+                        <p class="text-4xl">Waiting for the second Player...</p>
                     </div>
-
-                    <div class="pt-6 space-y-6 text-center border-t">
-                        <div>Share the game room URL with your friends or family</div>
+                    <div class="py-10 space-y-6 text-center border-t">
+                        <div>Share the game room URL with your friends or family to join the fun!</div>
                         <div>
-                            <IncludesCopyToClipboard class="btn-outline" />
+                            <IncludesCopyToClipboard class="btn-outline w-48 text-center" />
                         </div>
                     </div>
                 </template>

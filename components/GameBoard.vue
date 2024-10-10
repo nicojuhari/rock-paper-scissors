@@ -24,14 +24,15 @@
 </script>
 <template>
     <div class="max-w-sm mx-auto">
-        <div class="h-14 mt-8">
-            <template v-if="!isGameFinished">
-                <h1 class="text-xl font-bold text-center text-green-600">Play Now</h1>
-                <div class="text-sm text-center text-gray-600">(select 3 times)</div>
-            </template>
-            <h1 v-else class="text-xl font-bold mb-4 text-center text-gray-600">Game End</h1>
+        <div class="mt-8">
+            <h1 v-if="!isGameFinished" class="text-2xl font-bold text-center text-green-600 mb-4">Select your Move
+            </h1>
+            <h1 v-else class="text-2xl font-bold text-center mb-4">Game Finished!</h1>
+            <div class="text-sm text-center text-gray-800 space-y-2">
+                <div>After both players select their move 3 times,<br>the game ends and results will be displayed.</div>
+            </div>
         </div>
-        <div class="grid grid-cols-3 items-center gap-6 w-full mt-4" :class="{'opacity-50': isGameFinished}">
+        <div class="grid grid-cols-3 items-center gap-6 w-full mt-10" :class="{'opacity-50': isGameFinished}">
             <div @click="select(+key)" :class="{'hover:bg-gray-200 hover:translate-y-1' : !isGameFinished}"
                 class="aspect-square text-5xl inline-flex items-center justify-center cursor-pointer p-2 bg-white shadow-md rounded-md transition-all duration-300"
                 v-for="(item, key ) in controlers" :key="key"> {{ item }}
@@ -39,10 +40,10 @@
         </div>
         <PlayerSelected />
         <div v-if="isGameFinished" class="mt-8">
-            <div class="text-center text-2xl font-bold">
-                <div v-if="gameWinner === playerId" class="text-green-600 text-2xl">Congrats!<br>You won</div>
+            <div class="text-center text-xl font-medium">
+                <div v-if="gameWinner === playerId" class="text-green-600">Congratulations!<br>You've won!</div>
                 <div v-else-if="gameWinner === 0">It is a Draw</div>
-                <div v-else class="text-red-600 text-2xl">Sorry, you lost</div>
+                <div v-else class="text-red-600">Better luck next time!<br>Challenge your friend again!</div>
             </div>
             <div class="my-8 text-center">
                 <button @click.prevent="() => resetGame(gameId)" class="btn btn-outline">Play again</button>

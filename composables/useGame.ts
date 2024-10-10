@@ -45,7 +45,7 @@ export const useGame = () => {
             isGameFinished.value = false
             gameWinner.value = null
         }
-    })
+    }, { immediate: true })
 
     return {
         compareChoices,

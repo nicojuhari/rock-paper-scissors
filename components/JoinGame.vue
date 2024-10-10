@@ -18,7 +18,11 @@
 </script>
 <template>
     <div class="text-center">
-        <div class="my-6">This game has been created by your friend or not, JUST join(do) it.</div>
-        <button @click="onJoinGame" class="btn btn-primary">Join</button>
+        <div class="my-10 space-y-2">
+            <div>This game has been created by your friend.</div>
+            <div>Simply click the button below to join and start
+                playing!</div>
+        </div>
+        <button @click="onJoinGame" class="btn btn-primary">Join Now</button>
     </div>
 </template>
