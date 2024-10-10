@@ -1,9 +1,28 @@
 <script setup lang="ts">
 
-    const { isGameFinished, compareChoices } = useGame()
+    const { isGameFinished, compareChoices, gameWinner } = useGame()
     const { gameData } = useAppwrite()
     const { playerId } = usePlayer()
    
+    const youWon = ref(0)
+    const secondPlayerWon = ref(0)
+    const gamesPlayed = ref(0)
+
+    watch(gameWinner, (newVal, oldVal) => {
+        if(newVal === null) return
+        gamesPlayed.value += 1
+        if(newVal === 0) return // it's a draw
+        if(newVal === playerId.value) youWon.value += 1;
+        else secondPlayerWon.value += 1;
+    })
+
+    const whoIsLeader = computed(() => {
+        let tempClass = 'text-gray-800'
+        if (youWon.value > secondPlayerWon.value) tempClass = 'text-green-600'
+        if (youWon.value < secondPlayerWon.value) tempClass = 'text-red-600'
+        
+        return tempClass
+    })
    
 
     const controlers = {
@@ -82,6 +101,11 @@
                 </tr>
             </tbody>
         </table>
+        <div class="flex items-center justify-between px-1 py-1 text-sm">
+            <div>Games Played: <span class="font-bold">{{ gamesPlayed }}</span></div>
+            <div>Current Score: <span :class="whoIsLeader" class="font-bold">{{ youWon}} - {{ secondPlayerWon }}</span>
+            </div>
+        </div>
     </div>
 </template>
 
