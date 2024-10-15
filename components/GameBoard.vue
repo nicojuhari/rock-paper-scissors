@@ -29,7 +29,7 @@
             </h1>
             <h1 v-else class="text-2xl font-bold text-center mb-4">Game Finished!</h1>
             <div class="text-sm text-center text-gray-800 space-y-2">
-                <div>After both players select their move 3 times,<br>the game ends and results will be displayed.</div>
+                <div>After both players select their move <strong>3 times,</strong><br>the game ends and results will be displayed.</div>
             </div>
         </div>
         <div class="grid grid-cols-3 items-center gap-6 w-full mt-10" :class="{'opacity-50': isGameFinished}">
