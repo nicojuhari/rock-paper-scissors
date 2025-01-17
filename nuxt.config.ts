@@ -2,14 +2,14 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/seo'],
 
   app: {
         head: { 
             htmlAttrs: {
               lang: 'en'
             },
-            title: 'Rock Paper Scissors Online | Challenge Friends and Family',
+            title: 'Play Rock Paper Scissors Game Online - Free',
             titleTemplate: '%s',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
@@ -25,5 +25,10 @@ export default defineNuxtConfig({
               { src:"https://cdn.splitbee.io/sb.js", async: ''}
             ]
         },
+  },
+  site: {
+        url: 'https://play-rps-online.netlify.app/',
+        name: 'Play Rock Paper Scissors Online',
     },
+
 })

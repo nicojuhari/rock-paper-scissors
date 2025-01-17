@@ -59,7 +59,7 @@ onMounted(async () => {
                         <p class="text-4xl">Waiting for the second Player...</p>
                     </div>
                     <div class="py-10 space-y-6 text-center border-t">
-                        <div>Share the game room URL with your friends or family to join the fun!</div>
+                        <div>Share the game room URL with your friends or family to join the fun! 🎉</div>
                         <div>
                             <IncludesCopyToClipboard class="btn-outline w-48 text-center" />
                         </div>

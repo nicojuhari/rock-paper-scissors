@@ -1,6 +1,6 @@
 <script setup lang="ts">
   useHead({
-    title: 'Rock Paper Scissors Online | Challenge Friends and Family',
+    title: 'Play Rock Paper Scissors Game Online - FREE',
     meta: [
       { name: 'description', content: "Play Rock Paper Scissors online with friends and family! Create a game, share the link, and settle debates in a fun way. Join now to make decisions together!" },
       { name: 'keywords', content: 'rock paper scissors, game, play online' },
@@ -34,9 +34,10 @@ const onCreateGame = async () => {
       </h1>
       <div>Online</div>
     </div>
-    <div class="mt-10 text-center text-lg">No login or sign-up required!<br> Create - Share - Play</div>
-    <div class="text-center my-10">
-      <button class="btn btn-primary" @click.prevent="onCreateGame">Create a Game</button>
+    <div class="my-16 text-center text-lg flex gap-4 justify-center">Create <span class="text-green-500">&rsaquo;</span> Share <span class="text-green-500">&rsaquo;</span> Play</div>
+    <div class="text-center">
+      <button class="btn btn-primarys bg-green-600 text-white" @click.prevent="onCreateGame">Create a Game</button>
+      <div class="text-sm mt-4 text-gray-600">No login or sign-up required. It's FREE!</div>
     </div>
     <HomeContent />
   </div>
