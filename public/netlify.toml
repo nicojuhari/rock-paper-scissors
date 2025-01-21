@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://www.play-rps-online.netlify.app/*"
+  to = "https://play-rps-online.netlify.app/:splat"
+  status = 301
+  force = true
