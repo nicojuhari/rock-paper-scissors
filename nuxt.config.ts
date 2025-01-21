@@ -3,7 +3,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/seo'],
-
+  nitro: {
+    preset: 'netlify'
+  },
   app: {
         head: { 
             htmlAttrs: {
@@ -30,5 +32,9 @@ export default defineNuxtConfig({
         url: 'https://play-rps-online.netlify.app/',
         name: 'Play Rock Paper Scissors Online',
     },
+  routeRules: {
+    // Set prerender to true to configure it to be prerendered
+    "/": { prerender: true },
+  }
 
 })
