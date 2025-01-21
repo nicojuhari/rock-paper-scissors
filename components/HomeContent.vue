@@ -42,7 +42,7 @@
             <li><strong>Play the Long Game: </strong> In a series of matches, observe how your opponent reacts after losing. Players often repeat a losing move or overthink and switch too drastically.</li>
             <li><strong>Use Statistics: </strong> Studies show certain moves (like "Rock") are more common in casual games. Use this knowledge to anticipate and counter popular choices.</li>
         </ul>
-        <div class="text-xl font-semibold mb-3 text-center pt-10">Have fun! 🎉</div>
+        <div class="text-xl font-medium mb-3 text-center pt-10">Now, you are ready to Play Rock Paper Scissors Online<br><br>Have fun! 🎉</div>
         <div class="py-10">Read our <nuxt-link to="/privacy" title="privacy poilicy"
                 class="underline">Privacy Policy</nuxt-link> for more information about how we protect your data.
         </div>
