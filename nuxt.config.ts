@@ -22,7 +22,7 @@ export default defineNuxtConfig({
                 { rel: 'manifest', href:"/site.webmanifest" }
             ],
             meta: [
-                { name: 'apple-mobile-web-app-title', content: 'Play Rock Paper Scissors Online' },
+                { name: 'apple-mobile-web-app-title', content: 'Rock Paper Scissors Game Online' },
             ],
             script: [
               { src:"https://cdn.splitbee.io/sb.js", async: ''}
