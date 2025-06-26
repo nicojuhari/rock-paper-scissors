@@ -10,3 +10,10 @@ export type Game = {
   $updatedAt: string,
   $permissions: []
 }
+
+export type SingleGame = {
+  player1: string,
+  player2: string,
+  player1Choices: number[],
+  player2Choices: number[],
+}

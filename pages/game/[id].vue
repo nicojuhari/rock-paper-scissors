@@ -53,15 +53,14 @@ onMounted(async () => {
                     <JoinGame />
                 </template>
                 <template v-else>
-                    <h1 class="text-2xl font-bold mb-4 text-center">Game Room Status</h1>
-                    <div class="my-10 space-y-8 text-center">
+                    <div class="my-6 space-y-8 text-center">
+                        <h1 class="text-2xl font-bold mb-8 text-center">Waiting for the second player...</h1>
                         <UiLoading class="h-10 w-10 text-gray-300 text-center mx-auto" />
-                        <p class="text-4xl">Waiting for the second Player...</p>
-                    </div>
-                    <div class="py-10 space-y-6 text-center border-t">
-                        <div>Share the game room URL with your friends or family to join the fun! 🎉</div>
-                        <div>
-                            <IncludesCopyToClipboard class="btn-outline w-48 text-center" />
+                        <div class="space-y-6 text-center">
+                            <div>Share the game link with your friend to join the fun! 🎉</div>
+                            <div>
+                                <IncludesCopyToClipboard class="btn-outline w-48 text-center" />
+                            </div>
                         </div>
                     </div>
                 </template>

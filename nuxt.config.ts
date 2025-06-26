@@ -36,6 +36,12 @@ export default defineNuxtConfig({
   routeRules: {
     // Set prerender to true to configure it to be prerendered
     "/": { prerender: true },
+  },
+  ui: {
+    theme: {
+      colors: ['primary', 'secondary', 'neutral', 'error', 'success', 'warning', 'info']
+    },
+    colorMode: false
   }
 
 })

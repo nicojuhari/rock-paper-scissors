@@ -34,10 +34,13 @@ const onCreateGame = async () => {
         <span class="block mt-4">Online</span>
       </h1>
     </div>
-    <div class="my-16 text-center text-lg flex gap-4 justify-center">Create <span class="text-green-500">&rsaquo;</span> Share <span class="text-green-500">&rsaquo;</span> Play</div>
-    <div class="text-center">
-      <button class="btn btn-primarys bg-green-600 text-white" @click.prevent="onCreateGame">Create a Game</button>
-      <div class="text-sm mt-4 text-gray-600">No login or sign-up required. It's FREE!</div>
+    <div class="mt-16 mb-6 text-center flex flex-col md:flex-row gap-6 justify-center items-center">
+      <UButton to="/one-player" class="w-48" title="You vs Computer" icon="i-ph-user" size="xl">You vs Computer</UButton>
+      <UButton color="secondary" class="w-48 justify-center" icon="i-ph-users" size="xl" @click.prevent="onCreateGame">2 Players</UButton>
+    </div>
+    <div class="mt-6 text-center">
+      <div class="text-center flex gap-2 justify-center">Create <span class="text-green-500">&rsaquo;</span> Share <span class="text-green-500">&rsaquo;</span> Play</div>
+      <div class="text-sm mt-4 text-gray-600 text-center">No login or sign-up required. It's FREE!</div>
     </div>
     <HomeContent />
   </div>
