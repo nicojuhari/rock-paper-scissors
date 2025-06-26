@@ -25,7 +25,7 @@ export default defineNuxtConfig({
                 { name: 'apple-mobile-web-app-title', content: 'Rock Paper Scissors Game Online' },
             ],
             script: [
-              { src:"https://cdn.splitbee.io/sb.js", async: ''}
+                { src: 'https://scripts.simpleanalyticscdn.com/latest.js', async: true, 'data-collect-dnt': true }
             ]
         },
   },
