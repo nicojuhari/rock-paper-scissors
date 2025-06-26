@@ -22,6 +22,7 @@ export default defineNuxtConfig({
                 { rel: 'manifest', href:"/site.webmanifest" }
             ],
             meta: [
+                { name: 'google-site-verification', content: 'G-DmsXHjqgYIZfoeMtgM5iLhal2sV3E-IBpjR7G8zhg' },
                 { name: 'apple-mobile-web-app-title', content: 'Rock Paper Scissors Game Online' },
             ],
             script: [
