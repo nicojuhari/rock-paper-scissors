@@ -1,4 +1,5 @@
 <template>
+  <UApp>
   <div class="min-h-screen flex flex-col">
     <IncludesHeader />
     <main>
@@ -6,12 +7,10 @@
     </main>
     <IncludesFooter class="mt-auto" />
   </div>
+</UApp>
 </template>
-<style>
-@import url("~/assets/main.css");
-</style>
-<script setup>
 
+<script setup>
 useHead({
   meta: [
     { property: 'og:image', content: 'https://play-rps-online.netlify.app/og_rps.jpg' },
