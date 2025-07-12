@@ -70,7 +70,7 @@
             <div v-if="isGameFinished" class="mt-8">
                 <div class="text-center text-xl font-medium">
                     <div v-if="gameWinner === playerId" class="text-green-600">Congratulations!<br>You've won!</div>
-                    <div v-else-if="gameWinner === 0">It is a Draw</div>
+                    <div v-else-if="gameWinner === 0">It is a Tie</div>
                     <div v-else class="text-red-600">Try again and beat it!</div>
                 </div>
                 <div class="my-8 text-center">
