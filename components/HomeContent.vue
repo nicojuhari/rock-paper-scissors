@@ -53,8 +53,8 @@
 
     <!-- Closing CTA -->
     <div class="text-center mt-16">
-      <h2 class="text-2xl font-bold mb-4">Now You're Ready to Play!</h2>
-      <p class="text-lg text-gray-700 mb-6">Enjoy the classic game of Rock Paper Scissors with your friends or challenge our computer. Have fun! 🎉</p>
+      <h2 class="text-xl mb-4">Now You're Ready to<br>Play the Ultimate Rock Paper Scissors Game Online!</h2>
+      <p class="text-lg text-gray-700 mb-6">Enjoy the classic game with your friends or challenge our computer. Have fun! 🎉</p>
     </div>
 <p class="text-sm text-center text-gray-500 mt-16">
   Read our 
