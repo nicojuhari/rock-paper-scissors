@@ -38,13 +38,13 @@ const onCreateGame = async () => {
       </p>
     </div>
     <div class="mb-6 text-center">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 justify-center items-center">
-        <div>
-          <p class="font-bold text-lg flex flex-col items-center">1 Player <span class="text-gray-500 text-xs font-normal">(You vs Computer)</span></p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
+        <div class="bg-white p-6 rounded-lg border border-gray-100">
+          <p class="font-bold text-lg">1 Player</p>
           <UButton to="/one-player" class="justify-center mt-6" icon="i-ph-game-controller-duotone" block title="Play Now" size="xl" label="Play Now"/>
         </div>
-        <div>
-          <p class="font-bold text-lg flex flex-col items-center">2 Players <span class="text-gray-500 text-xs font-normal">(You vs Friend)</span></p>
+        <div class="bg-white p-6 rounded-lg border border-gray-100">
+          <p class="font-bold text-lg">2 Players</p>
           <UButton color="secondary" class="justify-center mt-6" icon="i-ph-users-duotone" block size="xl" @click.prevent="onCreateGame" label="Create a Game"/>
         </div>
       </div>
