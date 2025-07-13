@@ -1,7 +1,7 @@
 <template>
     <section class="py-16">
     <!-- How to Play -->
-    <h2 class="text-2xl font-bold mb-8 text-center">How to Play Rock Paper Scissors</h2>
+    <h2 class="text-2xl font-bold mb-6 text-center">How to Play Rock Paper Scissors</h2>
     <div class="space-y-6">
       <p class="text-lg text-gray-700">Rock-Paper-Scissors (RPS) is a simple hand game usually played between two people. Here’s how to start:</p>
 
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Strategy Guide -->
-    <h2 class="text-2xl font-bold mt-16 mb-8 text-center">Tips to Win at Rock Paper Scissors</h2>
+    <h2 class="text-2xl font-bold mt-16 mb-6 text-center">Tips to Win at Rock Paper Scissors</h2>
     <div class="grid md:grid-cols-2 gap-8">
       <div>
         <h3 class="text-lg font-semibold">👀 Watch for Patterns</h3>
@@ -53,16 +53,16 @@
 
     <!-- Closing CTA -->
     <div class="text-center mt-16">
-      <h2 class="text-xl mb-4">Now You're Ready to<br>Play the Ultimate Rock Paper Scissors Game Online!</h2>
-      <p class="text-lg text-gray-700 mb-6">Enjoy the classic game with your friends or challenge our computer. Have fun! 🎉</p>
+      <h2 class="text-2xl font-bold mb-6 text-center">Now You're Ready to Play!</h2>
+      <p class="text-lg text-gray-700">Enjoy the classic and ultimate game Rock Paper Scissors with your friends or challenge our computer. Have fun! 🎉</p>
     </div>
-<p class="text-sm text-center text-gray-500 mt-16">
-  Read our 
-  <NuxtLink to="/privacy" class="text-blue-600 underline" title="privacy policy">
-    Privacy Policy
-  </NuxtLink> 
-  to learn how we protect your data.
-</p>
+    <p class="text-sm text-center text-gray-500 mt-16">
+      Read our 
+      <NuxtLink to="/privacy" class="text-blue-600 underline" title="privacy policy">
+        Privacy Policy
+      </NuxtLink> 
+      to learn how we protect your data.
+    </p>
     
 </section>
 </template>
