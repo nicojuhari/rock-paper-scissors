@@ -28,12 +28,12 @@
     <!-- Step 3 -->
     <div>
       <div class="text-xl font-semibold flex items-center gap-2">🤝 Step 3: Choose Your Move</div>
-      <p class="mt-1 text-gray-700">Both players pick <strong>Rock, Paper, or Scissors</strong>. The rules are simple:</p>
+      <p class="mt-1 text-gray-700">The rules are simple:</p>
       <ul class="list-disc list-inside mt-2 space-y-1 text-gray-700">
-        <li><strong>Rock</strong> beats Scissors</li>
-        <li><strong>Scissors</strong> beats Paper</li>
-        <li><strong>Paper</strong> beats Rock</li>
-        <li>If both players choose the same move → it's a <strong>tie</strong>, so play again!</li>
+        <li><span class="font-semibold">Rock</span> beats Scissors</li>
+        <li><span class="font-semibold">Scissors</span> beats Paper</li>
+        <li><span class="font-semibold">Paper</span> beats Rock</li>
+        <li>If both players choose the same move → it's a <span class="font-semibold">tie</span>, so play again!</li>
       </ul>
     </div>
   </div>

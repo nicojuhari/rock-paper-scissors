@@ -1,3 +1,11 @@
+<script setup lang="ts">
+  useHead({
+    title: 'Privacy Policy | Rock Paper Scissors Online',
+    meta: [
+      { name: 'description', content: "Privacy Policy for Rock Paper Scissors Online" },
+    ],
+  })
+</script>
 <template>
     <div class="py-16 container">
   <div class="max-w-3xl mx-auto">
@@ -46,7 +54,7 @@
       <div>
         <h2 class="text-xl font-semibold">🕵️‍♂️ Your Anonymity is Safe</h2>
         <p class="text-gray-700">
-          We don’t use cookies, track you across the web, or build user profiles. You can enjoy the game completely anonymously.
+          We don't use cookies, track you across the web, or build user profiles. You can enjoy the game completely anonymously.
         </p>
       </div>
     </div>

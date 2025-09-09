@@ -1,5 +1,11 @@
 <script setup lang="ts">
 
+      useHead({
+        title: 'Play Rock Paper Scissors Online | You vs Computer | Free',
+        meta: [
+        { name: 'description', content: "Play Rock Paper Scissors online against the computer for free! Quick, fun, and no sign-up needed — test your luck and strategy anytime" },
+        ],
+    })
     const playerId = 'You'
 
     const controlers = {
