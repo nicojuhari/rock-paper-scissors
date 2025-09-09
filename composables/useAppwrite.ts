@@ -92,10 +92,10 @@ export const useAppwrite = () => {
     const channel = `databases.${APPWRITE_DATABASE_ID}.collections.${APPWRITE_COLLECTION_ID}.documents.${gameId}`
     if(!unsubscribe) {
       unsubscribe = client.subscribe(channel, (response) => {
-        if(response.events?.[0].includes('update'))
+        if(response.events?.[0]?.includes('update'))
           if(response && response.payload)
             gameData.value = response.payload as Game
-        if(response.events?.[0].includes('delete')) {
+        if(response.events?.[0]?.includes('delete')) {
           unsubscribeFromGame()
           useRouter().push('/')
         }
