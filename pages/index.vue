@@ -1,24 +1,12 @@
 <script setup lang="ts">
   useHead({
-    title: 'Play Rock Paper Scissors Game Online - Have Fun!',
+    title: 'Play Rock Paper Scissors Online Free | No Sign-Up Required',
     meta: [
-      { name: 'description', content: "Play Rock Paper Scissors online with friends and family! Create a game, share the link, and settle debates in a fun way. Join now to make decisions together!" },
-      { name: 'keywords', content: 'rock paper scissors, game, play online' },
+      { name: 'description', content: "Play Rock Paper Scissors Online for free! Challenge friends and family in this fun and fast multiplayer RPS game. No downloads - just click and play! " },
     ],
   })
 
-  const { playerId } = usePlayer()
-  const { createGame } = useAppwrite();
 
-const onCreateGame = async () => {
-  try {
-    const gameId = await createGame(playerId.value)
-    navigateTo(`/game/${gameId}`)
-  } catch (error) {
-    console.error(error)
-    alert('Failed to create game')
-  }
-}
 
 
 </script>
@@ -31,24 +19,13 @@ const onCreateGame = async () => {
         <span class="text-blue-500">Rock </span>
         <span class="text-yellow-500">Paper </span>
         <span class="text-red-500">Scissors </span>
-        <span class="block mt-2.5 text-[70%]">Game Online</span>
+        <span class="block mt-2.5 text-[70%]">Online</span>
       </h1>
-      <p class="text-lg text-center text-gray-600">
-          Challenge a friend or play against a computer<br class="hidden md:block"> — no downloads, no sign-up required.
+      <p class="sm:text-lg text-center text-gray-600">
+          Rock Paper Scissors is a FREE online game.<br> Create a game and play with friends or challenge the computer anytime!
       </p>
     </div>
-    <div class="mb-6 text-center">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
-        <div class="bg-white p-6 rounded-lg border border-primary/30">
-          <p class="font-bold text-lg">1 Player</p>
-          <UButton to="/one-player" class="justify-center mt-6" icon="i-ph-game-controller-duotone" block title="Play Now" size="xl" label="Play Now"/>
-        </div>
-        <div class="bg-white p-6 rounded-lg border border-secondary/30">
-          <p class="font-bold text-lg">2 Players</p>
-          <UButton color="secondary" class="justify-center mt-6" icon="i-ph-users-duotone" block size="xl" @click.prevent="onCreateGame" label="Create a Game"/>
-        </div>
-      </div>
-    </div>
+  <MainCTA />
   <HomeContent />
   <p class="text-sm text-center text-gray-500 mb-6">
       Read our 

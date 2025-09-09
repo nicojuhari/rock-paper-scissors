@@ -1,6 +1,6 @@
 <template>
-    <button @click.prevent="copyToClipboard" class="btn relative overflow-hidden justify-center" :disabled="buttonState !== 'normal'">
-        <span v-if="buttonState === 'normal'">Copy to Clipboard</span>
+    <button @click.prevent="copyToClipboard" class="btn relative overflow-hidden justify-center gap-4" :disabled="buttonState !== 'normal'">
+        <span v-if="buttonState === 'normal'">Copy Link</span>
         <span v-else-if="buttonState === 'loading'" class="flex items-center">
             <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24">

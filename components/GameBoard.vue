@@ -5,7 +5,7 @@
     const { gameData, updateGameChoices, resetGame } = useAppwrite()
     const { isGameFinished, gameWinner } = useGame()
     const route = useRoute()
-    const gameId = route.params.id as string
+    const gameId = route.query.gameId as string
     const playerId = usePlayer().playerId
     const playerNumber = gameData?.value?.player1 === playerId.value ? 1 : 2
 
@@ -43,7 +43,7 @@
             <div class="text-center text-xl font-medium">
                 <div v-if="gameWinner === playerId" class="text-green-600">Congratulations!<br>You've won!</div>
                 <div v-else-if="gameWinner === 0">It is a Tie</div>
-                <div v-else class="text-red-600">Better luck next time!<br>Challenge your friend again!</div>
+                <div v-else class="text-red-600">Better luck next time!</div>
             </div>
             <div class="my-8 text-center">
                 <button @click.prevent="() => resetGame(gameId)" class="btn btn-outline">Play again</button>

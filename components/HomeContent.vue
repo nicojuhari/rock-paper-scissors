@@ -1,78 +1,127 @@
 <template>
     <section class="py-16">
     <!-- How to Play -->
-    <h2 class="text-2xl font-bold mb-6 text-center">How to Play Rock Paper Scissors?</h2>
-    <div class="space-y-6">
-      <p class="text-lg text-gray-700">Rock-Paper-Scissors (RPS) is a simple hand game usually played between two people. Here's how to start:</p>
+    <h2 class="text-2xl font-bold mb-4 text-center">How to Play Rock Paper Scissors Online</h2>
+  <p class="mb-6 text-lg">
+    Rock Paper Scissors (RPS) is one of the easiest and most fun games to play. It only takes a few seconds to learn 
+    and is perfect for quick matches with friends or family. Here's how it works on our site:
+  </p>
 
-      <div>
-        <h3 class="font-bold">🎮 Step 1: Create a Game</h3>
-        <p>Click on "Create a Game" to generate a private game room where you can invite a friend to play.</p>
-      </div>
-
-      <div>
-        <h3 class="font-bold">🔗 Step 2: Share the Link</h3>
-        <p>Send the unique link to your friend or family member so they can join your game room.</p>
-      </div>
-
-      <div>
-        <h3 class="font-bold">🤝 Step 3: Start Playing</h3>
-        <p>Each player picks Rock, Paper, or Scissors. The winner is decided based on these rules:</p>
-        <ul class="list-disc list-inside mt-2">
-          <li>Rock beats Scissors</li>
-          <li>Scissors beats Paper</li>
-          <li>Paper beats Rock</li>
-        </ul>
-        <p class="mt-2">If both players choose the same move, it's a tie — play again!</p>
-      </div>
+  <div class="space-y-6">
+    <!-- Step 1 -->
+    <div>
+      <div class="text-xl font-semibold flex items-center gap-2">🎮 Step 1: Create a Game</div>
+      <p class="mt-1 text-gray-700">
+        Click <span class="font-semibold">“Create a Game”</span> to open your own private game room.
+      </p>
     </div>
-    <!-- Why Play Online? -->
-    <h2 class="text-2xl font-bold mt-16 mb-6 text-center">Why Play Online?</h2>
-    <p class="mb-4">
-      Our version of Rock Paper Scissors is built for speed and simplicity. No downloads, no accounts — just launch and play from any device. It works on mobile, tablet, or desktop.
-    </p>
-    <div class="mb-4">
-      You can also use it to resolve real-world debates:
-      <ul class="list-disc list-inside mt-2">
-        <li>Who pays the bill?</li>
-        <li>Who goes first in a game?</li>
-        <li>Who milks the cow?</li>
+
+    <!-- Step 2 -->
+    <div>
+      <div class="text-xl font-semibold flex items-center gap-2">🔗 Step 2: Invite a Friend</div>
+      <p class="mt-1 text-gray-700">
+        Share the unique link with your friend, family member, or anyone you want to challenge. 
+        They just click the link to join — no sign-up needed.
+      </p>
+    </div>
+
+    <!-- Step 3 -->
+    <div>
+      <div class="text-xl font-semibold flex items-center gap-2">🤝 Step 3: Choose Your Move</div>
+      <p class="mt-1 text-gray-700">Both players pick <strong>Rock, Paper, or Scissors</strong>. The rules are simple:</p>
+      <ul class="list-disc list-inside mt-2 space-y-1 text-gray-700">
+        <li><strong>Rock</strong> beats Scissors</li>
+        <li><strong>Scissors</strong> beats Paper</li>
+        <li><strong>Paper</strong> beats Rock</li>
+        <li>If both players choose the same move → it's a <strong>tie</strong>, so play again!</li>
       </ul>
-      <p class="mt-2 font-bold">Let RPS decide for you!</p>
     </div>
+  </div>
+
+  <!-- Extra Tips -->
+  <div class="mt-8 p-4 bg-white rounded-lg border border-gray-200/50">
+    <div class="text-lg font-semibold mb-2">💡 Extra Tips</div>
+    <ul class="list-disc list-inside space-y-1 text-gray-700">
+      <li>Want to practice first? You can also play against the computer.</li>
+      <li>Matches are quick — great for short breaks or fun competitions.</li>
+      <li>Keep score and see who wins the most rounds!</li>
+    </ul>
+  </div>
+    <!-- Why Play Online? -->
+    <h2 class="text-2xl font-bold mb-4 text-center mt-16">Why Play Online?</h2>
+  <p class="mb-6 text-lg">
+    Our version of RPS is built for <span class="font-semibold">speed</span> and 
+    <span class="font-semibold">simplicity</span>. No downloads, no accounts — just launch and play 
+    instantly from any device. It works on <strong>mobile</strong>, <strong>tablet</strong>, or 
+    <strong>desktop</strong>.
+  </p>
+
+  <div class="p-4 bg-white rounded-lg border border-gray-200/50">
+    <div class="text-lg font-semibold mb-2">🎲 Use it for Fun Decisions</div>
+    <p class="text-gray-700 mb-3">It isn't just a game — it's also a quick way to settle everyday debates:</p>
+    <ul class="list-disc list-inside space-y-1 text-gray-700">
+      <li>Who pays the bill?</li>
+      <li>Who goes first in a game?</li>
+      <li>Who milks the cow?</li>
+    </ul>
+    <p class="mt-3 font-medium text-gray-800">👉 Let RPS decide for you!</p>
+  </div>
 
     <!-- Strategy Guide -->
-    <h2 class="text-2xl font-bold mt-16 mb-6 text-center">Tips to Win at Rock Paper Scissors</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="font-bold">👀 Watch for Patterns</h3>
-        <p>Pay attention to what your opponent plays. If they favor a move like "Rock," use "Paper" to counter.</p>
-      </div>
+    <h2 class="text-2xl font-bold mb-4 mt-16 text-center">How to Win?</h2>
+  <p class="mb-6 text-lg text-gray-700">
+    RPS is often seen as pure luck — but with the right strategy, you can 
+    improve your chances of winning. Here are some simple tips to outsmart your opponent:
+  </p>
 
-      <div>
-        <h3 class="font-bold">🧠 Use Psychology</h3>
-        <p>Many players start with "Rock" — open with "Paper" to gain the upper hand.</p>
-      </div>
-
-      <div>
-        <h3 class="font-bold">🔁 Stay Unpredictable</h3>
-        <p>Switch up your choices often. Avoid creating patterns that your opponent can guess.</p>
-      </div>
-
-      <div>
-        <h3 class="font-bold">📊 Play the Long Game</h3>
-        <p>Observe how your opponent reacts after losing. Most people either repeat or completely change their move — use this to your advantage.</p>
-      </div>
+  <div class="space-y-6">
+    <!-- Tip 1 -->
+    <div>
+      <div class="text-xl font-semibold flex items-center gap-2">👀 Watch for Patterns</div>
+      <p class="mt-1 text-gray-700">
+        Pay attention to what your opponent plays most often. If they favor <strong>Rock</strong>, 
+        counter with <strong>Paper</strong>.
+      </p>
     </div>
+
+    <!-- Tip 2 -->
+    <div>
+      <div class="text-xl font-semibold flex items-center gap-2">🧠 Use Psychology</div>
+      <p class="mt-1 text-gray-700">
+        Many players open with <strong>Rock</strong>. Try starting with <strong>Paper</strong> to 
+        get the upper hand.
+      </p>
+    </div>
+
+    <!-- Tip 3 -->
+    <div>
+      <div class="text-xl font-semibold flex items-center gap-2">🔁 Stay Unpredictable</div>
+      <p class="mt-1 text-gray-700">
+        Mix up your moves and avoid patterns. If your choices are predictable, your opponent 
+        will catch on quickly.
+      </p>
+    </div>
+
+    <!-- Tip 4 -->
+    <div>
+      <div class="text-xl font-semibold flex items-center gap-2">📊 Play the Long Game</div>
+      <p class="mt-1 text-gray-700">
+        Watch how your opponent reacts after losing. Many will either repeat the same move 
+        or switch completely — use this to your advantage.
+      </p>
+    </div>
+  </div>
     
 
 
     <!-- Closing CTA -->
-    <div class="text-center mt-16">
-      <h2 class="text-2xl font-bold mb-6 text-center">Play Rock Paper Scissors Game Online<br class="hidden md:block"> and Have Fun!</h2>
-      <p class="text-lg">Enjoy the classic and ultimate game with your friends and family or challenge our computer. It's FREE.</p>
-      <div class="text-4xl mt-6">🎉</div>
-    </div>
+  <h2 class="text-2xl font-bold mb-4 mt-16 text-center">Play and Have Fun!</h2>  
+  <p class="text-lg mb-6">
+    Enjoy the classic game with your <strong>friends and family</strong>, or test your skills 
+    against our <strong>computer opponent</strong>.  
+    It's quick, simple, and <span class="font-semibold text-green-600">100% FREE</span>. 🎉
+  </p>
+  <MainCTA />
     
     
 </section>

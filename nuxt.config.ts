@@ -12,7 +12,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
               lang: 'en'
             },
-            title: 'Rock Paper Scissors Game Online - Free to Play',
+            title: 'Rock Paper Scissors Online | No Sign-Up Required | Play FREE',
             titleTemplate: '%s',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
   },
   site: {
         url: 'https://rps-game.online',
-        name: 'Rock Paper Scissors Game Online',
+        name: 'Rock Paper Scissors Online',
     },
   routeRules: {
     // Set prerender to true to configure it to be prerendered
